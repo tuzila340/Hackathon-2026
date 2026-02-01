@@ -1,9 +1,12 @@
 body {
     margin: 10; padding: 0; overflow-x: hidden;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom, #FFF4D5 0%, #ffffff 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 .leaf {
-    position: fixed; bottom: -50px; width: 14px; height: 14px;
+    position: fixed; bottom: 0px; width: 14px; height: 14px;
     animation: rise linear infinite;
     pointer-events: none;
     position: absolute;
@@ -16,4 +19,70 @@ body {
     to { transform: translateY(0) scale(1);}
 }
 
+/* Header */
+
+.main-header {
+    backdrop-filter: blur(5px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 20px 0;
+    transition: all 0.3s ease;
+}
+
+.header-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 50px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: rotate(-10deg) scale(1.1);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #d4a017;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #d4a017;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
 
