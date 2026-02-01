@@ -7,7 +7,7 @@ const imgs = [
 
 const makeBubble = () => {
     const b = document.createElement('div');
-    b.className = 'bubble';
+    b.className = 'leaf';
     b.style.left = Math.random() * 100 + 'vw';
     b.style.animationDuration = (6 + Math.random() * 8) + 's';
     b.style.width = b.style.height = (40 + Math.random() * 60) + 'px';
