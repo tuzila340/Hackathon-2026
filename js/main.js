@@ -16,3 +16,5 @@ const makeBubble = () => {
     setTimeout(() => b.remove(), 15000);
   };
   setInterval(makeBubble, 500);
+
+
