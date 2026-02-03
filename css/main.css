@@ -229,3 +229,35 @@ hr{
         font-size: 32px;
     }
 }
+
+/* Footer */
+.main-footer {
+    padding: 40px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #666666;
+    margin-top: 60px;
+}
+
+/* Media */
+
+@media (max-width: 900px) {
+    .feature, .about-row, .about-row.reverse {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+    
+    .footer_content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .footer_brand p {
+        margin: 15px auto;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+}
