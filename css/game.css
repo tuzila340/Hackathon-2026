@@ -1,0 +1,9 @@
+.leaf {
+    position: fixed; bottom: 0px; width: 14px; height: 14px;
+    animation: rise linear infinite;
+    pointer-events: none;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
