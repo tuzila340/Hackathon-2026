@@ -1,4 +1,6 @@
 let score = 0;
+const scoreEl = document.getElementById("score");
+const bin = document.getElementById("bin");
 
 const imgs = [
     '../img/tree_leaf_1.png',
@@ -7,50 +9,72 @@ const imgs = [
     '../img/tree_leaf_4.png',
 ];
 
-const makeGarbage = () => {
-    const b = document.createElement('div');
-    b.className = 'garbage';
-    b.style.left = Math.random() * 100 + 'vw';
-    b.style.top = Math.random() * 100 + 'vh';
-    b.style.width = b.style.height = (40 + Math.random() * 60) + 'px';
-    document.body.appendChild(b);
-    b.style.backgroundImage = `url(${imgs[Math.floor(Math.random() * imgs.length)]})`;
-  };
-  for (let i = 0; i < 10; i++) {
-    makeGarbage();
+function isIntersecting(element, bin) {
+
+    const elementRect = element.getBoundingClientRect();
+    const binRect = bin.getBoundingClientRect();
+
+    return !(
+        elementRect.right < binRect.left ||
+        elementRect.left > binRect.right ||
+        elementRect.bottom < binRect.top ||
+        elementRect.top > binRect.bottom
+    );
 }
 
-let elements = document.querySelectorAll('.garbage');
 
-elements.forEach(element => {
-  element.onmousedown = function(event) {
-    let shiftX = event.clientX - element.getBoundingClientRect().left;
-    let shiftY = event.clientY - element.getBoundingClientRect().top;
+function makeGarbage() {
 
-    element.style.position = 'absolute';
-    element.style.zIndex = 1000;
-    document.body.append(element);
+    const b = document.createElement('div');
+    b.className = 'garbage';
 
-    moveAt(event.pageX, event.pageY);
+    b.style.left = Math.random() * 80 + 'vw';
+    b.style.top = Math.random() * 80 + 'vh';
 
-    function moveAt(pageX, pageY) {
-      element.style.left = pageX - shiftX + 'px';
-      element.style.top = pageY - shiftY + 'px';
-    }
+    const size = 40 + Math.random() * 60;
+    b.style.width = size + 'px';
+    b.style.height = size + 'px';
 
-    function onMouseMove(event) {
-      moveAt(event.pageX, event.pageY);
-    }
+    b.style.backgroundImage =
+        `url(${imgs[Math.floor(Math.random() * imgs.length)]})`;
 
-    document.addEventListener('mousemove', onMouseMove);
+    document.body.appendChild(b);
 
-    element.onmouseup = function() {
-      document.removeEventListener('mousemove', onMouseMove);
-      element.onmouseup = null;
+    b.onmousedown = function(event) {
+
+        let shiftX = event.clientX - b.getBoundingClientRect().left;
+        let shiftY = event.clientY - b.getBoundingClientRect().top;
+
+        b.style.zIndex = 1000;
+
+        function moveAt(pageX, pageY) {
+            b.style.left = pageX - shiftX + 'px';
+            b.style.top = pageY - shiftY + 'px';
+        }
+
+        function onMouseMove(event) {
+            moveAt(event.pageX, event.pageY);
+        }
+
+        document.addEventListener('mousemove', onMouseMove);
+
+        b.onmouseup = function() {
+
+            document.removeEventListener('mousemove', onMouseMove);
+            b.onmouseup = null;
+
+            if (isIntersecting(b, bin)) {
+                score++;
+                scoreEl.textContent = score;
+                b.remove();
+            }
+        };
     };
-  };
 
-  element.ondragstart = function() {
-    return false;
-  };
-});
+    b.ondragstart = () => false;
+}
+
+
+for (let i = 0; i < 10; i++) {
+    makeGarbage();
+}
