@@ -3,10 +3,12 @@ const scoreEl = document.getElementById("score");
 const bin = document.getElementById("bin");
 
 const imgs = [
-    '../img/tree_leaf_1.png',
-    '../img/tree_leaf_2.png',
-    '../img/tree_leaf_3.png',
-    '../img/tree_leaf_4.png',
+    '../img/Apple-game.png',
+    '../img/banan-game.png',
+    '../img/banka-game.png',
+    '../img/bottle-game.png',
+    '../img/bottle2-game.png',
+    '../img/konserva-game.png',
 ];
 
 function isIntersecting(element, bin) {
@@ -28,8 +30,8 @@ function makeGarbage() {
     const b = document.createElement('div');
     b.className = 'garbage';
 
-    b.style.left = Math.random() * 80 + 'vw';
-    b.style.top = Math.random() * 80 + 'vh';
+    b.style.left = Math.random() * 60 + 'vw';
+    b.style.top = Math.random() * 190 + 'vh';
 
     const size = 40 + Math.random() * 60;
     b.style.width = size + 'px';
@@ -67,7 +69,13 @@ function makeGarbage() {
                 score++;
                 scoreEl.textContent = score;
                 b.remove();
+
+                if(score === 10) {
+                    alert("🎉 Вітаємо! Ти зібрав 10 предметів сміття!");
+                }
             }
+
+           
         };
     };
 
@@ -78,3 +86,4 @@ function makeGarbage() {
 for (let i = 0; i < 10; i++) {
     makeGarbage();
 }
+
