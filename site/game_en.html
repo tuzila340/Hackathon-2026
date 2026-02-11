@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/game.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class = "logo">🌲</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/site/index_en.html">Main</a></li>
+                    <li><a href="/site/about_us_en.html">About us</a></li>
+                    <li><a href="/site/ecosys_en.html">Ecosystems</a></li>
+                    <li><a href="/site/problem_en.html">Problems</a></li>
+                    <li><a href="/site/our_dicision_en.html">Our solution</a></li>
+                    <li  class="nav-links-active"><a href="/site/game_en.html">Game</a></li>
+                    <li> <div class="lang-menu">
+                        <span>🌐 Language</span>
+                        <div class="lang-list">
+                           <a href="/site/game.html" data-lang="uk">Українська</a>
+                           <a href="/site/game_de.html" data-lang="de">Deutsch</a>
+                        </div>
+                      </div></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="feature">
+            <div class="content">
+                <span class="subtitle">Game</span>
+                <h1>Learn while playing!</h1>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="feature_about_us">
+
+            <div class="about-row">
+                <div class="content">
+                    <span class="subtitle">The essence of the game</span>
+                    <h2>The land ecosystem is the basis of life on Earth.</h2>
+                    <p>
+                        In this interactive game you become a real nature protector! 
+Various pieces of garbage appear in front of you - leaves, bags and other objects. 
+Your goal is to drag all the garbage to the bin. 
+Each collected item adds points to your score.
+                    </p>
+                    <p>
+                        The game helps to realize that even small actions, like cleaning up trash, 
+can make the environment cleaner and safer for all living things.
+                    </p>
+                </div>
+            </div>
+        
+            <div class="about-row reverse">
+                <div class="content">
+                    <span class="subtitle">How to play</span>
+                    <h2>The goal of the game</h2>
+                    <p>
+                        Learn to care for the terrestrial ecosystem and develop attentiveness and speed. 
+                        Each attempt helps to understand the importance of small ecological actions 
+                        and motivates to make the world cleaner and safer for nature.
+                    </p>
+                    <ul>
+                        <li>Push and pull the trash to the bin.</li>
+                        <li>Each item that falls into the urn adds +1 to the score.</li>
+                    </ul>
+                </div>
+            </div>
+        
+        </section>
+
+        <hr>
+
+
+        <div class="game-ui">
+            <img src="/img/mysorni_bak-game.png" id="bin" class="bin"></img>
+            <p class="score">Score: <span id="score">0</span></p>
+        </div>
+    </main>
+    
+</body>
+<script src="/js/game.js"></script>
+</html>
