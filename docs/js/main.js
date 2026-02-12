@@ -2,7 +2,6 @@ const imgs = [
     'img/tree_leaf_1.png',
     'img/tree_leaf_2.png',
     'img/tree_leaf_3.png',
-    'img/tree_leaf_4.png',
 ];
 
 const makeBubble = () => {
