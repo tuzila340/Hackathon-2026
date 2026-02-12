@@ -3,12 +3,12 @@ const scoreEl = document.getElementById("score");
 const bin = document.getElementById("bin");
 
 const imgs = [
-    '../img/Apple-game.png',
-    '../img/banan-game.png',
-    '../img/banka-game.png',
-    '../img/bottle-game.png',
-    '../img/bottle2-game.png',
-    '../img/konserva-game.png',
+    'img/Apple-game.png',
+    'img/banan-game.png',
+    'img/banka-game.png',
+    'img/bottle-game.png',
+    'img/bottle2-game.png',
+    'img/konserva-game.png',
 ];
 
 function isIntersecting(element, bin) {
