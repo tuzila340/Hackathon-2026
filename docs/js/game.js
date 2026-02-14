@@ -1,6 +1,8 @@
 let score = 0;
 const scoreEl = document.getElementById("score");
 const bin = document.getElementById("bin");
+const card = document.getElementById("card");
+const get_btn = document.getElementById("get_btn");
 
 const imgs = [
     'img/Apple-game.png',
@@ -71,7 +73,7 @@ function makeGarbage() {
                 b.remove();
 
                 if(score === 10) {
-                    alert("🎉 Вітаємо! Ти зібрав 10 предметів сміття!");
+                    card.style.opacity = 1;
                 }
             }
 
@@ -83,7 +85,11 @@ function makeGarbage() {
 }
 
 
+
 for (let i = 0; i < 10; i++) {
     makeGarbage();
 }
 
+get_btn.onclick = function() {
+    card.style.opacity = 0;
+};
